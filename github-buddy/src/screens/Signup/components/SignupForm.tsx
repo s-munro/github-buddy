@@ -152,14 +152,14 @@ export const SignupForm = () => {
     }
   };
 
-  const handleKeyPress = (event: React.KeyboardEvent) => {
+  const handleKeyPress = (event: React.KeyboardEvent): void => {
     if (event.keyCode === 13 || event.which === 13) {
       state.isButtonDisabled || handleSignup();
     }
   };
   const handleFirstNameChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
-  ) => {
+  ): void => {
     dispatch({
       type: "setFirstName",
       payload: event.target.value,
@@ -167,7 +167,7 @@ export const SignupForm = () => {
   };
   const handleLastNameChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
-  ) => {
+  ): void => {
     dispatch({
       type: "setLastName",
       payload: event.target.value,
@@ -175,7 +175,7 @@ export const SignupForm = () => {
   };
   const handleEmailChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
-  ) => {
+  ): void => {
     dispatch({
       type: "setEmail",
       payload: event.target.value,
@@ -183,7 +183,7 @@ export const SignupForm = () => {
   };
   const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
-  ) => {
+  ): void => {
     dispatch({
       type: "setPassword",
       payload: event.target.value,
