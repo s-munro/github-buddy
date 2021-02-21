@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import {
   createStyles,
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     header: {
       textAlign: "center",
-      background: "#212121",
+      background: "#646464",
       color: "#fff",
     },
     card: {
@@ -114,6 +115,7 @@ const reducer = (state: State, action: Action): State => {
 
 export const SignupForm = () => {
   const classes = useStyles();
+  const history = useHistory();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -135,12 +137,13 @@ export const SignupForm = () => {
     }
   }, [state.first_name, state.last_name, state.email, state.password]);
 
-  const handleSignup = () => {
+  const handleSignup = (): void => {
     if (state.email === "email@email.com" && state.password === "password") {
       dispatch({
         type: "signupSuccess",
         payload: "Signup Successfully",
       });
+      history.push("/login");
     } else {
       dispatch({
         type: "signupFailed",
@@ -250,7 +253,7 @@ export const SignupForm = () => {
           <Button
             variant="contained"
             size="large"
-            color="secondary"
+            color="primary"
             className={classes.loginBtn}
             onClick={handleSignup}
             disabled={state.isButtonDisabled}
