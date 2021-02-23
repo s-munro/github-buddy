@@ -3,7 +3,7 @@ import { LoginForm } from "./components/LoginForm";
 
 const Login = () => {
   return (
-    <div>
+    <div className="h-screen flex justify-center items-center">
       <LoginForm />
     </div>
   );

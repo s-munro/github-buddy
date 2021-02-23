@@ -11,7 +11,7 @@ import { PrivateRoute } from "./utils/PrivateRoute";
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div className="container mx-auto h-screen">
       <Router>
         <Nav />
         <Switch>
