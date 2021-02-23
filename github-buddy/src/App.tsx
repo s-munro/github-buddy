@@ -7,19 +7,21 @@ import Signup from "./screens/Signup/Signup";
 import Login from "./screens/Login/Login";
 import Dashboard from "./screens/Dashboard/Dashboard";
 
-function App() {
+import { PrivateRoute } from "./utils/PrivateRoute";
+
+const App: React.FC = () => {
   return (
     <div>
       <Router>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Dashboard} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
+          <PrivateRoute path="/" component={Dashboard} />
         </Switch>
       </Router>
     </div>
   );
-}
+};
 
 export default App;
