@@ -84,7 +84,8 @@ export const LoginForm = () => {
     }
   }, [state.email, state.password]);
 
-  const handleSubmit = (): void => {
+  const handleSubmit = (e: any): void => {
+    e.preventDefault();
     const user = {
       user_email: state.email,
       user_password: state.password,
