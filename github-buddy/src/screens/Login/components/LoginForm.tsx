@@ -1,5 +1,6 @@
 import React, { useReducer, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 import {
   createStyles,
@@ -35,6 +36,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
+interface Token {
+  token: string;
+}
 
 type State = {
   email: string;
@@ -117,18 +121,30 @@ export const LoginForm = () => {
   }, [state.email, state.password]);
 
   const handleLogin = (): void => {
-    if (state.email === "email@email.com" && state.password === "password") {
-      dispatch({
-        type: "loginSuccess",
-        payload: "Login Successful",
+    const user = {
+      user_email: state.email,
+      user_password: state.password,
+    };
+    axios
+      .post<Token>(
+        "https://github-buddy-backend.herokuapp.com/api/auth/login",
+        user
+      )
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        dispatch({
+          type: "loginSuccess",
+          payload: "Login Successful.",
+        });
+        history.push("/");
+      })
+      .catch((err) => {
+        dispatch({
+          type: "loginFailed",
+          payload: "Login Failed.",
+        });
+        console.log(err);
       });
-      history.push("/dashboard");
-    } else {
-      dispatch({
-        type: "loginFailed",
-        payload: "Incorrect username or password",
-      });
-    }
   };
 
   const handleKeyPress = (event: React.KeyboardEvent): void => {
