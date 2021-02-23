@@ -1,41 +1,6 @@
 import React, { useReducer, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-
-import {
-  createStyles,
-  makeStyles,
-  Theme,
-  Card,
-  CardHeader,
-  CardContent,
-  TextField,
-  CardActions,
-  Button,
-} from "@material-ui/core";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    container: {
-      display: "flex",
-      flexWrap: "wrap",
-      width: 400,
-      margin: `${theme.spacing(0)} auto`,
-    },
-    loginBtn: {
-      marginTop: theme.spacing(2),
-      flexGrow: 1,
-    },
-    header: {
-      textAlign: "center",
-      background: "#646464",
-      color: "#fff",
-    },
-    card: {
-      marginTop: theme.spacing(10),
-    },
-  })
-);
 interface Token {
   token: string;
 }
@@ -102,7 +67,6 @@ const reducer = (state: State, action: Action): State => {
 };
 
 export const LoginForm = () => {
-  const classes = useStyles();
   const history = useHistory();
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -120,7 +84,7 @@ export const LoginForm = () => {
     }
   }, [state.email, state.password]);
 
-  const handleLogin = (): void => {
+  const handleSubmit = (): void => {
     const user = {
       user_email: state.email,
       user_password: state.password,
@@ -147,12 +111,6 @@ export const LoginForm = () => {
       });
   };
 
-  const handleKeyPress = (event: React.KeyboardEvent): void => {
-    if (event.keyCode === 13 || event.which === 13) {
-      state.isButtonDisabled || handleLogin();
-    }
-  };
-
   const handleEmailChange: React.ChangeEventHandler<HTMLInputElement> = (
     event
   ): void => {
@@ -171,51 +129,36 @@ export const LoginForm = () => {
   };
 
   return (
-    <form>
-      <Card>
-        <CardHeader className={classes.header} title="Login" />
-        <CardContent>
-          <div>
-            <TextField
-              error={state.isError}
-              fullWidth
-              id="email"
-              type="email"
-              label="Email"
-              placeholder="Email"
-              margin="normal"
-              helperText={state.helperText}
-              onChange={handleEmailChange}
-              onKeyPress={handleKeyPress}
-            />
-
-            <TextField
-              error={state.isError}
-              fullWidth
-              id="password"
-              type="password"
-              label="Password"
-              placeholder="Password"
-              margin="normal"
-              helperText={state.helperText}
-              onChange={handlePasswordChange}
-              onKeyPress={handleKeyPress}
-            />
-          </div>
-        </CardContent>
-        <CardActions>
-          <Button
-            variant="contained"
-            size="large"
-            color="primary"
-            className={classes.loginBtn}
-            onClick={handleLogin}
-            disabled={state.isButtonDisabled}
-          >
-            Login
-          </Button>
-        </CardActions>
-      </Card>
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col justify-center items-center"
+    >
+      <label>
+        Email
+        <input
+          className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block appearance-none leading-normal m-2"
+          id="email"
+          type="email"
+          placeholder="Email"
+          onChange={handleEmailChange}
+        />
+      </label>
+      <label>
+        Password
+        <input
+          className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block appearance-none leading-normal m-2"
+          id="password"
+          type="password"
+          placeholder="Password"
+          onChange={handlePasswordChange}
+        />
+      </label>
+      <button
+        className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700"
+        disabled={state.isButtonDisabled}
+      >
+        Login
+      </button>
     </form>
   );
 };
