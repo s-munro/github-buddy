@@ -141,13 +141,13 @@ export const SignupForm = () => {
     if (state.email === "email@email.com" && state.password === "password") {
       dispatch({
         type: "signupSuccess",
-        payload: "Signup Successfully",
+        payload: "Signup Successful",
       });
       history.push("/login");
     } else {
       dispatch({
         type: "signupFailed",
-        payload: "Incorrect username or password",
+        payload: "Error signing up.",
       });
     }
   };
