@@ -155,7 +155,7 @@ export const LoginForm = () => {
         />
       </label>
       <button
-        className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700"
+        className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-gray-800 hover:bg-green-700"
         disabled={state.isButtonDisabled}
       >
         Login
