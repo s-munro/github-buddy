@@ -6,12 +6,13 @@ A platform for monitoring your repositories and teams, keeping track of bugs, an
 
 - React
 - TypeScript
+- TailwindCSS
 - Node.js (for back-end repository)
 - PostgreSQL
 
 ### Additional technology considerations:
 
-- Chakra/Tailwind
+- Chakra UI
 - Cloudflare
 - AWS
 - urql and graphQL
