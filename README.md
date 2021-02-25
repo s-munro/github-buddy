@@ -3,7 +3,7 @@
 A platform for monitoring your repositories and teams, keeping track of bugs, and viewing contribution across users. Sign up, create a project, add your team members, and get to work.
 
 ## About Github Buddy:
-Github Buddy aims to become a one-stop DevOps platform for small teams and invidual developers.  Github Buddy aims to focus on repository management and team collaboration, and will allow users to create an account, link their github, add repositories, and view/manage their projects.  From there, users can view and manage issues, see recent changes, and monitor who is worked on what.
+Github Buddy aims to become a one-stop DevOps platform for small teams and invidual developers.  Github Buddy aims to focus on repository management and team collaboration, and will allow users to create an account, link their github, add repositories, and view/manage their projects.  From there, users can view and manage issues, see recent changes, and monitor who is working on what.
 
 ## Tentative tech stack:
 
