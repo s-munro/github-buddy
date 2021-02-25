@@ -5,7 +5,7 @@ A platform for monitoring your repositories and teams, keeping track of bugs, an
 ## About Github Buddy:
 Github Buddy aims to focus on repository management and team collaboration, and will allow users to create an account, link their github, add repositories, and view/manage their projects.  From there, users can view and manage issues, see recent changes, and monitor who is working on what.
 
-## Tentative tech stack:
+### Tentative tech stack:
 
 - React
 - TypeScript
@@ -20,7 +20,7 @@ Github Buddy aims to focus on repository management and team collaboration, and 
 - AWS
 - urql and graphQL
 
-## Dev Resources:
+### Dev Resources:
 
 - http://json2ts.com/
 
