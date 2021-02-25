@@ -4,7 +4,7 @@ import { SignupForm } from "./components/SignupForm";
 
 const Signup = () => {
   return (
-    <div>
+    <div className="h-screen flex justify-center items-center">
       <SignupForm />
     </div>
   );
