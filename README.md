@@ -1,4 +1,4 @@
-# Github Buddy
+# Github Buddy - In-Progress (Feb 13 - Present)
 
 A platform for monitoring your repositories and teams, keeping track of bugs, and viewing contribution across users. Sign up, create a project, add your team members, and get to work.
 
