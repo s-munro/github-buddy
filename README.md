@@ -23,3 +23,17 @@ Github Buddy aims to focus on repository management and team collaboration, and 
 ## Dev Resources:
 
 - http://json2ts.com/
+
+### TODO:
+
+- Incorporate Auth0 Login
+  - Auth Route
+  - Redirect to log-in on logged out
+  - Direct to dashboard on logged in
+  - Authenticate with github?
+- Load in profile data from github?
+- Begin dashboard
+  - Download repositories
+  - Create Project
+    - Add Team
+    - Add Repository
