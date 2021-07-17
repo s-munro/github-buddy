@@ -18,7 +18,7 @@ Github Buddy aims to focus on repository management and team collaboration, and 
 - Chakra UI
 - Cloudflare
 - AWS
-- urql and graphQL
+- graphQL
 
 ### Dev Resources:
 
